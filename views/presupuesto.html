@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web</title>
+    <link rel="stylesheet" type="text/css" href="../css/miEstilo.css">
+</head>
+<body>
+
+    <header>
+        <a href="https://facebook.com"><img class="red-social" src="../images/Pelotas_Layout.png" alt="Tienda Pelotas" width="237" height="69"></a>
+    </header>
+
+    <nav>
+        <a href="../index.html">HOME</a>
+        <a href="productos.html">PRODUCTOS</a>
+        <a href="presupuesto.html" class="active">PRESUPUESTO</a>
+        <a href="contacto.html">CONTACTO</a>
+    </nav>
+
+    <section>
+        
+        <h1>PRESUPUESTO</h1>
+        <h2>Solicitar Presupuesto</h2>
+
+        <form id="presupuestoForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" pattern="[A-Za-záéíóúÁÉÍÓÚ\s]+" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+    
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+    
+            <label for="solicitud">Solicite más información:</label>
+            <textarea id="solicitud" name="solicitud" rows="4" ></textarea>
+    
+        <!--
+            <label>
+                <input type="checkbox" id="politicaPrivacidad" name="politicaPrivacidad" required>  Acepto la Política de Privacidad
+            </label>
+        -->
+
+            <div class="checkbox-container">
+                <label>
+                        <input type="checkbox" id="politicaPrivacidad" name="politicaPrivacidad" required>
+                        Acepto la Política de Privacidad
+                </label>
+            </div>
+
+            <button type="button" onclick="enviarPresupuesto()">Enviar Presupuesto</button>
+        </form>
+    
+
+
+
+    </section>
+
+    <footer>
+        <div>
+            <a href="https://facebook.com"><img class="red-social" src="../images/facebook_logo.png" alt="Facebook" width="2048" height="2048"></a>
+            <a href="https://twitter.com"><img class="red-social" src="../images/x_logo.avif" alt="Twitter" width="570" height="570"></a>
+            <a href="https://www.oligofrenia.com/"><img class="red-social" src="../images/tiktok_logo.png" alt="Tiktok" width="512" height="512"></a>
+        </div>
+        <div>
+            <p>Calle Zigüeña 78, Villalpuerro</p>
+            <p>Aviso Legal</p>
+        </div>
+        <div>
+        </div>
+    </footer>
+
+    <script>
+        function enviarPresupuesto() {
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+            var solicitud = document.getElementById("solicitud").value;
+            var politicaPrivacidad = document.getElementById("politicaPrivacidad").checked;
+
+            if (nombre && email && telefono && solicitud && politicaPrivacidad) {
+                alert("Presupuesto enviado correctamente");
+                
+            } else {
+                alert("Por favor, complete todos los campos y acepte la política de privacidad.");
+            }
+        }
+    </script>
+
+</body>
+</html>
